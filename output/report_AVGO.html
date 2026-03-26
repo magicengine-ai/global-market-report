@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcom Inc. (AVGO) - 公司深度报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .ticker-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            opacity: 0.9;
+        }
+        
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .card h2 {
+            color: #1a1a2e;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .metric-item {
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .metric-sub {
+            color: #888;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+        
+        .description {
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        
+        .milestone-list {
+            list-style: none;
+        }
+        
+        .milestone-item {
+            display: flex;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .milestone-item:last-child {
+            border-bottom: none;
+        }
+        
+        .milestone-year {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .milestone-event {
+            display: flex;
+            align-items: center;
+            color: #333;
+            font-size: 1.05em;
+        }
+        
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .analysis-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .analysis-section h2 {
+            color: #1a1a2e;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .analysis-item {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            border-radius: 12px;
+            border: 1px solid #e8ecff;
+        }
+        
+        .analysis-item h3 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .analysis-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .rating-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .rating-box .rating {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .rating-box .analysts {
+            opacity: 0.9;
+        }
+        
+        .positive {
+            color: #22c55e;
+        }
+        
+        .negative {
+            color: #dc2626;
+        }
+        
+        .neutral {
+            color: #f59e0b;
+        }
+        
+        @media (max-width: 768px) {
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            color: #666;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #856404;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回排行榜</a>
+        
+        <div class="header">
+            <div class="header-top">
+                <div>
+                    <h1>Broadcom Inc.</h1>
+                    <p style="opacity: 0.9; font-size: 1.1em;">Technology | Semiconductors</p>
+                </div>
+                <div class="ticker-badge">AVGO</div>
+            </div>
+            <div class="header-meta">
+                <span>📊 市值：$591.62B</span>
+                <span>💰 股价：$1278.29</span>
+                <span>📈 52 周：$913.29 - $1444.86</span>
+                <span>🔄 更新：2026-03-26 21:22</span>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h2>📈 核心指标</h2>
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">市值</div>
+                        <div class="metric-value">$591.62B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">企业价值</div>
+                        <div class="metric-value">$621.20B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">市盈率 (TTM)</div>
+                        <div class="metric-value">30.744932450947367</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">远期市盈率</div>
+                        <div class="metric-value">27.25655812842726</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">市净率</div>
+                        <div class="metric-value">7.0111135967727</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">股息率</div>
+                        <div class="metric-value">0.62%</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">利润率</div>
+                        <div class="metric-value">22.19%</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Beta</div>
+                        <div class="metric-value">0.876496605495222</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>💼 主营业务</h2>
+                <div class="description">
+                    Broadcom Inc. 是一家全球领先的Semiconductors，专注于提供创新的产品和服务。
+                </div>
+                <div style="margin-top: 20px;">
+                    <p style="color: #666; margin-bottom: 10px;">官方网站:</p>
+                    <a href="https://www.broadcom.com" target="_blank" style="color: #667eea; font-size: 1.1em;">https://www.broadcom.com</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2>🏆 竞争优势</h2>
+            <div class="tag-list">
+                <span class="tag">✓ 技术创新能力强</span>
+                <span class="tag">✓ 研发投入高</span>
+                <span class="tag">✓ 生态系统完善</span>
+                <span class="tag">✓ 品牌影响力大</span>
+
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h2>📅 发展里程碑</h2>
+                <ul class="milestone-list">
+
+                    <li class="milestone-item">
+                        <div class="milestone-year">N/A</div>
+                        <div class="milestone-event">公司发展历史数据待完善</div>
+                    </li>
+
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>💰 财务数据</h2>
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">总营收</div>
+                        <div class="metric-value">$147.90B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">毛利润</div>
+                        <div class="metric-value">$59.16B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">自由现金流</div>
+                        <div class="metric-value">$35.50B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">经营现金流</div>
+                        <div class="metric-value">$47.33B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">总现金</div>
+                        <div class="metric-value">$47.33B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">总债务</div>
+                        <div class="metric-value">$70.99B</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">营收增长率</div>
+                        <div class="metric-value positive">3.33%</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">盈利增长率</div>
+                        <div class="metric-value positive">14.00%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2>🔮 未来发展趋势</h2>
+            <div class="analysis-grid">
+
+                <div class="analysis-item">
+                    <h3>📈 人工智能和机器学习应用</h3>
+                    <p>公司将在这一领域持续投入资源，把握市场机遇，推动长期增长。</p>
+                </div>
+
+                <div class="analysis-item">
+                    <h3>📈 云计算持续增长</h3>
+                    <p>公司将在这一领域持续投入资源，把握市场机遇，推动长期增长。</p>
+                </div>
+
+                <div class="analysis-item">
+                    <h3>📈 数字化转型加速</h3>
+                    <p>公司将在这一领域持续投入资源，把握市场机遇，推动长期增长。</p>
+                </div>
+
+                <div class="analysis-item">
+                    <h3>📈 物联网设备普及</h3>
+                    <p>公司将在这一领域持续投入资源，把握市场机遇，推动长期增长。</p>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2>📊 分析师评级</h2>
+            <div class="metric-grid">
+                <div class="metric-item">
+                    <div class="metric-label">目标高价</div>
+                    <div class="metric-value">$1542.72</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">目标低价</div>
+                    <div class="metric-value">$1028.48</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">当前股价</div>
+                    <div class="metric-value">$1278.29</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">分析师数量</div>
+                    <div class="metric-value">49</div>
+                </div>
+            </div>
+            <div class="rating-box" style="background: #22c55e;">
+                <div class="rating">强烈买入</div>
+                <div class="analysts">基于 49 位分析师意见</div>
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2>👥 持股结构</h2>
+            <div class="metric-grid">
+                <div class="metric-item">
+                    <div class="metric-label">内部持股</div>
+                    <div class="metric-value">3.20%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">机构持股</div>
+                    <div class="metric-value">57.98%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">流通股数</div>
+                    <div class="metric-value">0.46B</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">平均成交量</div>
+                    <div class="metric-value">67.54M</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>数据来源：Yahoo Finance | 报告生成时间：2026-03-26 21:22:53</p>
+            <div class="disclaimer">
+                ⚠️ 免责声明：本报告仅供参考，不构成投资建议。投资有风险，决策需谨慎。数据可能存在延迟，请以官方信息为准。
+            </div>
+        </div>
+    </div>
+</body>
+</html>
