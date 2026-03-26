@@ -40,10 +40,11 @@ env/
 logs/
 *.log
 
-# Data (optional - uncomment if you don't want to track data files)
-# data/*.json
+# Data - only keep latest, ignore historical snapshots
+data/market_data_*.json
+!data/latest_market_data.json
 
-# Output (optional - uncomment if you don't want to track generated files)
+# Output - track all HTML reports
 # output/*.html
 
 # OS
