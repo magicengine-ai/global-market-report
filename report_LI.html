@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LI Corporation (LI) - 公司分析报告</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        .back-link:hover { background: rgba(255,255,255,0.3); }
+        .card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .header h1 {
+            font-size: 2em;
+            color: #1a1a2e;
+        }
+        .header .ticker {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .rank-badge {
+            background: #fbbf24;
+            color: #1a1a2e;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .metric {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .metric .label { color: #64748b; font-size: 0.9em; margin-bottom: 5px; }
+        .metric .value { font-size: 1.5em; font-weight: bold; color: #1a1a2e; }
+        .section-title {
+            font-size: 1.5em;
+            color: #1a1a2e;
+            margin: 20px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        .info-list { list-style: none; }
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .info-list li:last-child { border-bottom: none; }
+        .tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin: 4px;
+        }
+        .milestone {
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .milestone .year {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        
+        <div class="card">
+            <div class="header">
+                <div>
+                    <h1>LI Corporation</h1>
+                    <p style="color: #64748b; margin-top: 5px;">Technology · Other · 中国</p>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span class="rank-badge">🏆 全球第 81 名</span>
+                    <span class="ticker">LI</span>
+                </div>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="label">市值</div>
+                    <div class="value">$35.08B</div>
+                </div>
+                <div class="metric">
+                    <div class="label">股价</div>
+                    <div class="value">$35.08</div>
+                </div>
+                <div class="metric">
+                    <div class="label">市盈率 (TTM)</div>
+                    <div class="value">24.63</div>
+                </div>
+                <div class="metric">
+                    <div class="label">市净率</div>
+                    <div class="value">3.07</div>
+                </div>
+                <div class="metric">
+                    <div class="label">股息率</div>
+                    <div class="value">1.89%</div>
+                </div>
+                <div class="metric">
+                    <div class="label">利润率</div>
+                    <div class="value">24.93%</div>
+                </div>
+                <div class="metric">
+                    <div class="label">营收增长</div>
+                    <div class="value">17.89%</div>
+                </div>
+                <div class="metric">
+                    <div class="label">盈利增长</div>
+                    <div class="value">8.01%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">📋 公司简介</h2>
+            <p style="line-height: 1.8; color: #334155;">LI 公司信息（模拟数据）</p>
+            <p style="margin-top: 15px;">
+                <strong>官网：</strong><a href="https://www.li.com" target="_blank" style="color: #667eea;">https://www.li.com</a>
+            </p>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">🛍️ 主要产品</h2>
+            <div style="margin-top: 15px;">
+                <span class="tag">📦 产品信息待完善</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">💼 核心服务</h2>
+            <div style="margin-top: 15px;">
+                <span class="tag">💼 服务信息待完善</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">💎 竞争优势</h2>
+            <div style="margin-top: 15px;">
+                <span class="tag">数据待完善</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">🚀 未来趋势</h2>
+            <div style="margin-top: 15px;">
+                <span class="tag">数据待完善</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">📅 发展历程</h2>
+            <div style="margin-top: 15px;">
+                <div class="milestone"><div class="year">N/A</div><div>数据待完善</div></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">📊 财务指标</h2>
+            <ul class="info-list">
+                <li><span>企业价值</span><span>$36.83B</span></li>
+                <li><span>总营收</span><span>$8.77B</span></li>
+                <li><span>毛利润</span><span>$3.51B</span></li>
+                <li><span>自由现金流</span><span>$2.10B</span></li>
+                <li><span>总现金</span><span>$2.81B</span></li>
+                <li><span>总债务</span><span>$4.21B</span></li>
+                <li><span>52 周涨幅</span><span>-5.67%</span></li>
+                <li><span>Beta 系数</span><span>0.98</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
